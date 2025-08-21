@@ -1,0 +1,161 @@
+<style>
+  .customer {
+    width: 100%;
+    background: radial-gradient(circle at center, #074299 0%, #001432 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 0;
+  }
+  .customer-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  .our-service {
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    background-color: #074299;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+  }
+  .sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .sec span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .about-us {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .images {
+    max-height: 600px;
+    max-width: 600px;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    box-shadow: 0px 0px 40px 5px rgba(255, 255, 255, 0.2);
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  .images span {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .images span img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+  }
+  .images span img:hover {
+    transform: scale(1.05);
+  }
+  .video {
+    width: 100%;
+  }
+</style>
+
+<section class="customer" id="customer">
+  <div class="customer-container">
+    <div class="our-service">
+      <div class="sec sec-1">
+        <img
+          width="65"
+          height="65"
+          src="https://img.icons8.com/fluency/48/order-completed.png"
+          alt="order-completed"
+        />
+        <span>
+          <h1>50+</h1>
+          <h2>Active Projects</h2>
+        </span>
+      </div>
+      <div class="sec sec-2">
+        <img
+          width="100"
+          height="100"
+          src="https://img.icons8.com/external-filled-color-icons-papa-vector/78/external-Happy-Customer-video-game-design-filled-color-icons-papa-vector.png"
+          alt="external-Happy-Customer-video-game-design-filled-color-icons-papa-vector"
+        />
+        <span>
+          <h1>35+</h1>
+          <h2>Happy Customers</h2>
+        </span>
+      </div>
+      <div class="sec sec-3">
+        <img
+          width="70"
+          height="70"
+          src="https://img.icons8.com/external-others-cattaleeya-thongsriphong/50/external-backpack-school-color-line-others-cattaleeya-thongsriphong-6.png"
+          alt="external-backpack-school-color-line-others-cattaleeya-thongsriphong-6"
+        />
+        <span>
+          <h1>100%</h1>
+          <h2>Certification</h2>
+        </span>
+      </div>
+      <div class="sec sec-4">
+        <img
+          width="70"
+          height="70"
+          src="https://img.icons8.com/badges/48/internship.png"
+          alt="internship"
+        />
+        <span>
+          <h1>25+</h1>
+          <h2>Years Experience</h2>
+        </span>
+      </div>
+    </div>
+    <div class="about-us">
+      <div class="images">
+        <span>
+          <img src="/assets/law1.jpg" alt="law" />
+        </span>
+        <span>
+          <img src="/assets/law2.jpg" alt="law" />
+        </span>
+        <span>
+          <img src="/assets/law3.jpg" alt="law" />
+        </span>
+        <span>
+          <img src="/assets/law5.webp" alt="law" />
+        </span>
+      </div>
+      <div class="video">
+        <iframe
+          width="100%"
+          height="400"
+          src="https://www.youtube.com/embed/Bv4864T-C-A?autoplay=1&mute=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>

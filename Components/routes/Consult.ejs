@@ -1,0 +1,306 @@
+<% layout('layouts/Boilerplate') %>
+
+<style>
+  .services {
+    width: 100%;
+    background: radial-gradient(circle at center, #074299 0%, #001432 100%);
+  }
+  .service-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    padding-top: 0;
+  }
+  .service-head {
+    width: 100%;
+    height: 90%;
+    padding-top: 6rem;
+  }
+  .service-head img {
+    width: 100%;
+  }
+  .service-head h1 {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 5rem;
+  }
+  .all-services {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+  .all-services .service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .legal h1 span {
+    color: rgb(255, 106, 0);
+    text-shadow: 2px 2px 2px orange;
+  }
+  .img-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
+  .img {
+    width: 45%;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .img:hover img {
+    box-shadow: 0px 0px 30px 3px rgba(0, 0, 0, 0.5);
+    transform: scale(1.02);
+  }
+  .img img {
+    width: 90%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .legal-info {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .legal-info p {
+    font-size: 1.2rem;
+    line-height: 27px;
+  }
+  .legal-info ul {
+    margin-left: 1rem;
+    line-height: 30px;
+  }
+  .legal-info ul li {
+    font-size: 1.2rem;
+  }
+  .all-services .it {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+</style>
+
+<body>
+  <div class="services">
+    <div class="service-container">
+      <div class="service-head">
+        <img src="/assets/service-banner.jpg" alt="service" />
+        <h1>Services We Provide</h1>
+      </div>
+      <div class="all-services">
+        <div class="service legal" id="legal">
+          <h1 style="font-size: 2.5rem">👉 <span>LEGAL</span> 🏢</h1>
+          <h2 style="font-weight: 600; color: rgb(255, 157, 0)">
+            Professional Legal Services You Can Trust
+          </h2>
+          <div class="img-info">
+            <span class="legal-info">
+              <p style="width: 70%">
+                At Legalion, we provide comprehensive legal services tailored to
+                meet the unique needs of individuals, families, and businesses.
+                Our experienced attorneys are committed to delivering practical
+                solutions with integrity, discretion, and unmatched
+                professionalism.
+              </p>
+              <p style="width: 70%">
+                Whether you’re facing a complex legal dispute, need guidance
+                through a business transaction, or require personal legal
+                advice, we’re here to protect your interests every step of the
+                way. Our practice areas include:
+              </p>
+              <ul>
+                <li>Civil and Commercial Litigation</li>
+                <p></p>
+                <li>Business and Corporate Law</li>
+                <li>Family and Divorce Law</li>
+              </ul>
+              <p>
+                With a client-first approach, we combine in-depth legal
+                knowledge with personalized service to help you make informed
+                decisions and achieve the best possible outcomes.
+              </p>
+              <p>
+                <a href="/contact-us">Contact us</a>
+                today for a confidential consultation. Your legal peace of mind
+                starts here.
+              </p>
+            </span>
+            <span class="img">
+              <img src="/assets/Lawist.jpg" alt="Law" />
+            </span>
+          </div>
+        </div>
+        <hr style="width: 100%" />
+        <div class="service it" id="IT">
+          <h1 style="font-size: 2rem">
+            👉 <span>INFORMATION TECHNOLOGY (IT)</span> 🌐
+          </h1>
+          <h2
+            style="font-size: 1.4rem; font-weight: 600; color: rgb(255, 157, 0)"
+          >
+            Innovative Information Technology Solutions for a Digital World
+          </h2>
+          <div class="img-info">
+            <span class="legal-info">
+              <p style="width: 70%">
+                At Legalion, we deliver smart, scalable, and secure IT solutions
+                that drive business performance and digital transformation. Our
+                mission is to empower organizations through cutting-edge
+                technology, expert support, and forward-thinking strategies.
+              </p>
+              <p style="width: 70%">
+                Whether you're a startup, small business, or enterprise, our
+                comprehensive IT services are designed to meet your evolving
+                needs in today’s fast-paced digital landscape. Our core services
+                include:
+              </p>
+              <ul>
+                <li>Managed IT Services & Support</li>
+                <li>Cloud Solutions & Migration</li>
+                <li>Cybersecurity & Risk Management</li>
+                <li>Network Design & Infrastructure</li>
+                <li>Software Development & Integration</li>
+                <li>IT Consulting & Strategy</li>
+                <li>Data Backup & Disaster Recovery</li>
+              </ul>
+              <p>
+                We combine technical expertise with a customer-first mindset to
+                deliver reliable, cost-effective, and future-ready solutions.
+                Our team of certified professionals works closely with you to
+                understand your goals and build a technology ecosystem that
+                grows with your business.
+              </p>
+              <p>
+                Partner with us to make technology your competitive advantage.
+              </p>
+            </span>
+            <span class="img">
+              <img src="/assets/Information-Technology.jpg" alt="Law" />
+            </span>
+          </div>
+        </div>
+        <hr style="width: 100%" />
+        <div class="service dm" id="DM">
+          <h1 style="font-size: 2rem">👉 <span>BUSINESS BRANDING</span> 🚀</h1>
+          <h2
+            style="font-size: 1.4rem; font-weight: 600; color: rgb(255, 157, 0)"
+          >
+            Results-Driven Digital Marketing That Grows Your Brand
+          </h2>
+          <div class="img-info">
+            <span class="legal-info">
+              <p style="width: 70%">
+                At Legalion, we help businesses thrive online through strategic,
+                data-driven digital marketing. Our goal is simple: to connect
+                you with your audience, increase visibility, and drive real,
+                measurable growth.
+              </p>
+              <p style="width: 70%">
+                From building your brand’s online presence to generating
+                qualified leads, our expert team combines creativity with
+                analytics to deliver powerful marketing campaigns that convert.
+                Our services include:
+              </p>
+              <ul>
+                <li>Search Engine Optimization (SEO)</li>
+                <li>Social Media Marketing & Management</li>
+                <li>Pay-Per-Click (PPC) Advertising</li>
+                <li>Content Marketing & Blogging</li>
+                <li>Email Marketing Campaigns</li>
+                <li>Conversion Rate Optimization (CRO)</li>
+                <li>Web Analytics & Reporting</li>
+              </ul>
+              <p style="width: 80%;">
+                Whether you're launching a new product, expanding your market,
+                or looking to improve ROI, we tailor every strategy to your
+                business goals and target audience.
+              </p>
+              <p>
+                Let us help you turn clicks into customers — and customers into
+                loyal advocates.
+              </p>
+            </span>
+            <span class="img" style="height: 100%; top: -25%;">
+              <img src="/assets/digital.png" alt="Law" />
+            </span>
+          </div>
+        </div>
+        <hr style="width: 100%" />
+        <div class="service dm" id="DM">
+          <h1 style="font-size: 2rem">👉 <span>CONSULTING</span> 🚀</h1>
+          <h2
+            style="font-size: 1.4rem; font-weight: 600; color: rgb(255, 157, 0)"
+          >
+            Strategic Consulting to Empower Your Business
+          </h2>
+          <div class="img-info">
+            <span class="legal-info">
+              <p style="width: 70%">
+                At Legalion, we provide expert consulting services designed to
+                help organizations navigate challenges, seize opportunities, and
+                achieve sustainable growth. Our team of experienced consultants
+                brings deep industry knowledge, analytical insight, and a
+                results-oriented approach to every engagement.
+              </p>
+              <p style="width: 70%">
+                We partner with businesses of all sizes—from startups to
+                established enterprises—to deliver customized strategies that
+                drive efficiency, innovation, and performance. Our core
+                consulting services include:
+              </p>
+              <ul>
+                <li>Business Strategy & Planning</li>
+                <li>Operational Efficiency & Process Improvement</li>
+                <li>Financial & Risk Advisory</li>
+                <li>Technology & Digital Transformation</li>
+                <li>Organizational Development & Change Management</li>
+                <li>Market Research & Competitive Analysis</li>
+              </ul>
+              <p>
+                We don't just offer advice—we work alongside you to implement
+                actionable solutions that deliver real results. Whether you're
+                launching a new venture, scaling operations, or rethinking your
+                business model, we provide the clarity and support to move
+                forward with confidence.
+              </p>
+              <p>
+                Let’s build your path to success—strategically, collaboratively,
+                and effectively.
+              </p>
+            </span>
+            <span class="img">
+              <img src="/assets/business-consulting.jpg" alt="Law" />
+            </span>
+          </div>
+        </div>
+        <hr style="width: 100%" />
+      </div>
+    </div>
+  </div>
+</body>

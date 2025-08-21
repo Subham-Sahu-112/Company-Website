@@ -1,0 +1,296 @@
+<style>
+  .contact {
+    width: 100%;
+    background: radial-gradient(circle at center, #074299 0%, #001432 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    padding-top: 6rem;
+  }
+  .contact-head {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+  .contact-head h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  .contact-section {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  .contact-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .contact-info .info {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.075);
+    box-shadow: -3px -3px 10px 5px rgba(0, 0, 0, 0.3),
+      3px 3px 10px 2px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 2rem 2rem;
+  }
+  .info h1 {
+    font-size: 1.9rem;
+    color: orange;
+    text-shadow: 0px 0px 10px black;
+  }
+  .contact-info .location {
+    width: 100%;
+    height: 400px;
+    margin-top: 1rem;
+  }
+  .contact-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .form-inp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  .form-inp span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .form-inp input,
+  .form-inp select {
+    width: 85%;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0 1rem;
+    caret-color: white;
+    box-sizing: border-box;
+  }
+  .form-inp select {
+    /* color: black; */
+    caret-color: transparent;
+  }
+  .form-inp select option {
+    color: black;
+  }
+  .form-inp input:focus {
+    outline: none;
+  }
+  .form-inp input::placeholder {
+    color: white;
+  }
+  .form-inp textarea {
+    width: 80%;
+    height: 100px;
+    border: none;
+    border-radius: 15px;
+    padding: 1rem 1rem;
+  }
+  .contact-form .submit-btn {
+    width: 84%;
+    height: 50px;
+    border: 2px solid #0066ff;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    background-color: #0066ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .contact-form .submit-btn:hover {
+    background-color: #0053cf;
+  }
+  .contact-head {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .contact-head.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .contact-info {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .contact-info.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s;
+  }
+  .contact-form {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .contact-form.visible {
+    opacity: 1;
+    transform: translate(0);
+    transition-delay: 0.5s;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const containers = document.querySelectorAll(
+      ".contact-head, .contact-info, .contact-form"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.01,
+      }
+    );
+
+    containers.forEach((container) => observer.observe(container));
+  });
+</script>
+
+<div class="contact" id="contact">
+  <div class="contact-head">
+    <h1>Connect Us</h1>
+    <h2>
+      Your partner for digital transformation in Bhubaneswar, offering
+      state-of-the-art IT solutions that make a difference.
+    </h2>
+  </div>
+  <div class="contact-section">
+    <div class="contact-info">
+      <div class="info">
+        <h1>Contact Information</h1>
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          +91 9945293599
+        </p>
+        <p>
+          <i class="fa-regular fa-envelope"></i>
+          info@Legalion.co.in
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh,
+          Bhubaneswar-751010
+        </p>
+      </div>
+      <div class="location">
+        <div id="map" style="height: 420px; width: 94%"></div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            var map = L.map("map").setView([20.2928844, 85.8566821], 13);
+
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+              attribution:
+                '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+            }).addTo(map);
+
+            var marker = L.marker([20.2928844, 85.8566821]).addTo(map);
+            marker
+              .bindPopup(
+                "Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh, Bhubaneswar-751010"
+              )
+              .openPopup();
+          });
+        </script>
+      </div>
+    </div>
+    <div class="contact-form">
+      <form action="/send-mail" method="POST" class="form-inp">
+        <span>
+          <label for="name">Full name*</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter Your Name"
+            required
+          />
+        </span>
+
+        <span>
+          <label for="company">Company Name*</label>
+          <input
+            type="text"
+            name="company"
+            id="company-name"
+            placeholder="Enter Your Company Name"
+          />
+        </span>
+        <span>
+          <label for="email">Email*</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter Your Email"
+            required
+          />
+        </span>
+        <span>
+          <label for="service">Select Service</label>
+          <select name="service" required>
+            <option value="">Select Service</option>
+            <option value="corporate compliance">Corporate Compliance</option>
+            <option value="international law">International Law</option>
+            <option value="regulatory advisory">Regulatory Advisory</option>
+            <option value="business formation">Business Formation</option>
+            <option value="contract law">Contract Law</option>
+            <option value="dispute resolution">Dispute Resolution</option>
+          </select>
+        </span>
+        <span>
+          <label for="details">Project Details*</label>
+          <textarea
+            type="text"
+            name="details"
+            id="name"
+            placeholder="Tell us more about your project"
+          ></textarea>
+        </span>
+      <button type="submit" class="submit-btn">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

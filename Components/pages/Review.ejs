@@ -1,0 +1,229 @@
+<style>
+  .review {
+    width: 100%;
+    background: radial-gradient(circle at center, #074299 0%, #001432 100%);
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .review-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .review-container h2 {
+    text-align: center;
+    color: #6c63ff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #0d00ff 0%, #e9bb8a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .review-cards {
+    width: 810px;
+    height: 290px;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .review-card {
+    max-width: 800px;
+    max-height: 280px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    padding: 1.5rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+  .review-card.active {
+    opacity: 1;
+    pointer-events: auto;
+    animation: fadeIn 1s ease forwards;
+  }
+  .review-card.inactive {
+    opacity: 0;
+    pointer-events: none;
+    animation: fadeOut 1s ease forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
+  .review-card.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .testimonial-text {
+    width: 90%;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #d0d0d0;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .author-info strong {
+    display: block;
+    color: #6c63ff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .author-info span {
+    display: block;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+  .company {
+    color: var(--accent);
+    font-weight: 500;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".review-card");
+    let currentIndex = 0;
+
+    function showCard(index) {
+      cards.forEach((card, i) => {
+        if (i === index) {
+          card.classList.add("active");
+        } else {
+          card.classList.remove("active");
+        }
+      });
+    }
+
+    showCard(currentIndex); // Show first card initially
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % cards.length;
+      showCard(currentIndex);
+    }, 4000);
+  });
+</script>
+
+<section class="review" id="review">
+  <div class="review-container">
+    <h2>What Our Clients Say</h2>
+    <div class="review-cards">
+      <div class="review-card" data-index="0">
+        <div class="review-rating">
+          <span class="star">⭐⭐⭐⭐⭐</span>
+        </div>
+        <p class="testimonial-text">
+          "Legal Stanley guided our company through complex international
+          compliance. Their expertise saved us significant time and resources.
+          Highly recommended!"
+        </p>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <strong>Priya Menon</strong>
+            <span>CEO, Menon Exports</span>
+            <span class="company">Menon Exports Pvt Ltd</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-index="1">
+        <div class="review-rating">
+          <span class="star">⭐⭐⭐⭐⭐</span>
+        </div>
+        <p class="testimonial-text">
+          "Professional, responsive, and always a step ahead. The best legal
+          partner for our startup journey. They understand modern business
+          needs."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <strong>James Lee</strong>
+            <span>Co-Founder, FinTechX</span>
+            <span class="company">FinTechX Solutions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-index="2">
+        <div class="review-rating">
+          <span class="star">⭐⭐⭐⭐⭐</span>
+        </div>
+        <p class="testimonial-text">
+          "Their regulatory advisory saved us from costly mistakes. Trustworthy,
+          reliable, and incredibly knowledgeable about international law."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <strong>Aisha Al-Farsi</strong>
+            <span>Director, Gulf Holdings</span>
+            <span class="company">Gulf Holdings LLC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-index="3">
+        <div class="review-rating">
+          <span class="star">⭐⭐⭐⭐⭐</span>
+        </div>
+        <p class="testimonial-text">
+          "Exceptional service in corporate law. They handled our complex merger
+          with professionalism and expertise. Truly world-class legal services."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <strong>Robert Chen</strong>
+            <span>Managing Director, TechVentures</span>
+            <span class="company">TechVentures Inc</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-controls">
+      <button class="testimonial-dot"></button>
+    </div>
+  </div>
+</section>

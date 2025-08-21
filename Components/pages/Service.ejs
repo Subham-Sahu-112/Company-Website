@@ -1,0 +1,322 @@
+<style>
+  .service {
+    width: 100%;
+    background: radial-gradient(circle at center, #074299 0%, #001432 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6rem;
+  }
+  .service-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .serv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .serv img {
+    width: 80px;
+    display: block;
+    padding: 2rem;
+  }
+  .container-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .container-3 {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .container-1,
+  .container-2 {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .container-1.visible,
+  .container-2.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .card-1,
+  .card-3,
+  .card-4,
+  .card-5 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .card-1 {
+    transform: translateY(-100px);
+  }
+  .card-3 {
+    transform: translateY(-100px);
+  }
+  .card-4 {
+    transform: translateY(-100px);
+  }
+  .card-5 {
+    transform: translateY(-100px);
+  }
+
+  .card-1.visible {
+    opacity: 1;
+    transform: translate(0);
+    transition-delay: 0.2s;
+  }
+  .card-3.visible {
+    opacity: 1;
+    transform: translate(0);
+    transition-delay: 0.4s;
+  }
+  .card-4.visible {
+    opacity: 1;
+    transform: translate(0);
+    transition-delay: 0.6s;
+  }
+  .card-5.visible {
+    opacity: 1;
+    transform: translate(0);
+    transition-delay: 0.8s;
+  }
+  .card {
+    max-height: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.075);
+    box-shadow: -3px -3px 10px 5px rgba(0, 0, 0, 0.3),
+      3px 3px 10px 2px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    padding: 2rem 2rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.77, 0, 0.18, 1);
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #6c63ff 0%, #ffb86c 100%);
+    transform: scaleX(0);
+    transition: transform 0.35s cubic-bezier(0.77, 0, 0.18, 1);
+  }
+
+  .card:hover::before {
+    transform: scaleX(1);
+  }
+  .card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3),
+      -3px -3px 10px 2px rgba(255, 255, 255, 0.3);
+  }
+  .card .icon {
+    font-size: 2.8rem;
+  }
+  .card .des {
+    font-size: 1rem;
+    line-height: 27px;
+  }
+  .card .head {
+    font-size: 1.5rem;
+    color: #fa911a;
+    font-weight: bold;
+  }
+  .card ul {
+    list-style: none;
+    line-height: 30px;
+  }
+  .card ul li {
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .learn-btn {
+    width: 100%;
+    height: 40px;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .learn-btn:hover {
+    border-top: 2px solid rgba(255, 255, 255, 1);
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const containers = document.querySelectorAll(
+      ".container-1, .container-2, .card-1, .card-3, .card-4, .card-5"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Prevents repeated triggers
+          }
+        });
+      },
+      {
+        threshold: 0.01,
+      }
+    );
+
+    containers.forEach((container) => observer.observe(container));
+  });
+</script>
+
+<div class="service" id="service">
+  <div class="service-container">
+    <div class="container-1">
+      <div class="serv serv-1">
+        <img src="/assets/services/legal-advice.png" alt="legal" />
+        <h2>Legal Support</h2>
+      </div>
+      <div class="serv serv-1">
+        <img src="/assets/services/study.png" alt="legal" />
+        <h2 style="text-align: center">Learning and Development</h2>
+      </div>
+      <div class="serv serv-1">
+        <img src="/assets/services/doctor-patient.png" alt="legal" />
+        <h2>Consulting & Solutioning</h2>
+      </div>
+      <div class="serv serv-1">
+        <img src="/assets/services/legal-advice.png" alt="legal" />
+        <h2>Legal Support</h2>
+      </div>
+    </div>
+    <div class="container-2">
+      <h1 style="font-size: 2.7rem; font-weight: bold">
+        Services <span style="color: #fa911a">we provide</span>
+      </h1>
+      <h1 style="text-align: center; font-weight: 400">
+        Get Everything you need effortlessly, with seamless integration that
+        puts all your digital tools together!
+      </h1>
+      <p style="text-align: center; font-size: 1rem">
+        Discover a range o solutions tailored to drive you business to new
+        heights. Whether you're seeking cutting edge software development or
+        seamless digital transformation, we're dedicated to steering you towards
+        your success. Let us pave the way for you growth with our expertise in
+        innovation software solutions and flawless digital strategies
+      </p>
+    </div>
+    <div class="container-3">
+      <div class="card card-1">
+        <span class="icon">🏢</span>
+        <span class="head">LEGAL</span>
+        <span class="des">
+          Comprehensive compliance solutions for businesses across various
+          industries and jurisdictions.
+        </span>
+        <span>
+          <ul>
+            <li>✔ &nbsp;Banking and IBC</li>
+            <li>✔ &nbsp;Alternative Dispute Resolutions</li>
+            <li>✔ &nbsp;White Collar Criminal Compilance</li>
+            <li>✔ &nbsp;Corporate Governance</li>
+          </ul>
+        </span>
+        <a class="learn-btn" style="margin-top: 3.8rem" href="/services/legal-service">
+          <span>Learn More</span>
+        </a>
+      </div>
+      <div class="card card-3">
+        <span class="icon">🌐</span>
+        <span class="head">INFORMATION TECHNOLOGY</span>
+        <span class="des"
+          >Cross-border legal services for businesses operating in multiple
+          countries.</span
+        >
+        <span>
+          <ul>
+            <li>✔ &nbsp;Oracle project Management Implementation</li>
+            <li>✔ &nbsp;Sales Force Implementation</li>
+            <li>✔ &nbsp;Customized Application Development</li>
+          </ul>
+        </span>
+        <a class="learn-btn" style="margin-top: 2rem;" href="/services/IT-service">
+          <span>Learn More</span>
+        </a>
+      </div>
+      <div class="card card-4">
+        <span class="icon">🚀</span>
+        <span class="head">DIGITAL MARKETING</span>
+        <span class="des"
+          >Complete solution with webpage, SEO, Funnel Creations, Lead
+          Generations, Digital Advertising</span
+        >
+        <span>
+          <ul>
+            <li>✔ &nbsp;AI Enabled Digital Content Creation</li>
+            <li>✔ &nbsp;Digital Advertising</li>
+            <li>✔ &nbsp;Google Business Enablement</li>
+            <li>✔ &nbsp;Social Media Marketing</li>
+            <li>✔ &nbsp;Email Marketing</li>
+          </ul>
+        </span>
+        <a class="learn-btn" style="margin-top: 1.7rem" href="/services/business-branding">
+          <span>Learn More</span>
+        </a>
+      </div>
+      <div class="card card-5">
+        <span class="icon">📄</span>
+        <span class="head">CONSULTING</span>
+        <span class="des"
+          >Consulting Of Data Transformations , Business Due Dilligence , Merger
+          & Acquitions, Application Modernizations</span
+        >
+        <span>
+          <ul>
+            <li>✔ &nbsp;Data transformation & Modernization consulting</li>
+            <li>✔ &nbsp;Application Modernization</li>
+            <li>✔ &nbsp;Oracle E B S-Process Improvement consulting</li>
+          </ul>
+        </span>
+        <a class="learn-btn" href="/services/consulting">
+          <span>Learn More</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

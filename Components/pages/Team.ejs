@@ -1,0 +1,273 @@
+<style>
+  .team-section {
+    width: 100%;
+    background: radial-gradient(circle at center, #074299 0%, #001432 100%);
+    padding: 5rem 0;
+  }
+  .team-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  .team-container h2 {
+    color: #0066ff;
+    font-size: 2.5rem;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 0 rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.77, 0, 0.18, 1);
+    cursor: pointer;
+  }
+  .team-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.18), 0 0 32px 0 #bfcaff;
+  }
+  .team-member {
+    width: 100%;
+    text-align: center;
+  }
+  .team-member i {
+    height: 80px;
+    width: 80px;
+    font-size: 2.7rem;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6c63ff 0%, #ffb86c 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .team-card h3 {
+    color: #0066ff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .team-role {
+    color: #ffb86c;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+  .team-domain {
+    color: #b8b8b8;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .team-card hr {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 1rem;
+  }
+  .team-meta {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+  .team-meta span {
+    color: #b8b8b8;
+    font-size: 0.9rem;
+  }
+  .team-title {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .team-title.visible {
+    opacity: 1;
+    transform: translate(0);
+  }
+  .member-1 {
+    opacity: 0;
+    transform: translateX(-100px) translateY(-100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  .member-2 {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  .member-3 {
+    opacity: 0;
+    transform: translateX(100px) translateY(-100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  .member-4 {
+    opacity: 0;
+    transform: translateX(-100px) translateY(100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  .member-5 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  .member-6 {
+    opacity: 0;
+    transform: translateX(100px) translateY(100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  .member-1.visible,
+  .member-2.visible,
+  .member-3.visible,
+  .member-4.visible,
+  .member-5.visible,
+  .member-6.visible {
+    opacity: 1;
+    transform: translate(0);
+  }
+  .member-1.visible {
+    transition-delay: 0.2s;
+  }
+  .member-2.visible {
+    transition-delay: 0.4s;
+  }
+  .member-3.visible {
+    transition-delay: 0.7s;
+  }
+  .member-4.visible {
+    transition-delay: 0.2s;
+  }
+  .member-5.visible {
+    transition-delay: 0.4s;
+  }
+  .member-6.visible {
+    transition-delay: 0.7s;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const containers = document.querySelectorAll(
+      ".team-title, .member-1, .member-2, .member-3, .member-4, .member-5, .member-6"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.01,
+      }
+    );
+
+    containers.forEach((container) => observer.observe(container));
+  });
+</script>
+
+<section class="team-section" id="team">
+  <div class="team-container">
+    <h2 class="team-title">Team</h2>
+    <div class="team-grid">
+      <div class="team-card member-1">
+        <div class="team-member">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <h3 class="team-name">Srittam Das</h3>
+        <p class="team-role">Chief Executive Consultant</p>
+        <p class="team-domain">IT, Finance, Law</p>
+        <hr />
+        <div class="team-meta">
+          <span>25+ Years</span>
+          <span>MBA , LLB, CA</span>
+        </div>
+      </div>
+
+      <div class="team-card member-2">
+        <div class="team-member">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <h3 class="team-name">Anuraj Das</h3>
+        <p class="team-role">Director</p>
+        <p class="team-domain">Marketing</p>
+        <hr />
+        <div class="team-meta">
+          <span>1+ Years</span>
+          <span>BBA International Marketing</span>
+        </div>
+      </div>
+
+      <div class="team-card member-3">
+        <div class="team-member">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <h3 class="team-name">Jyoti Prasad Tripathy</h3>
+        <p class="team-role">IT Director</p>
+        <p class="team-domain">IT, Digital Marketing</p>
+        <hr />
+        <div class="team-meta">
+          <span>13+ Years</span>
+          <span>BE</span>
+        </div>
+      </div>
+
+      <div class="team-card member-4">
+        <div class="team-member">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <h3 class="team-name">Subhankar Dash</h3>
+        <p class="team-role">IT Consultant</p>
+        <p class="team-domain">WEB Design Expert</p>
+        <hr />
+        <div class="team-meta">
+          <span>1+ Years</span>
+          <span>MCA</span>
+        </div>
+      </div>
+
+      <div class="team-card member-5">
+        <div class="team-member">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <h3 class="team-name">Smrutirekha Das</h3>
+        <p class="team-role">Content Creator</p>
+        <p class="team-domain">Content Design</p>
+        <hr />
+        <div class="team-meta">
+          <span>1+ Years</span>
+          <span>MCA</span>
+        </div>
+      </div>
+
+      <div class="team-card member-6">
+        <div class="team-member">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <h3 class="team-name">Rabindranath Samantaray</h3>
+        <p class="team-role">Graphics Design</p>
+        <p class="team-domain">Content Design</p>
+        <hr />
+        <div class="team-meta">
+          <span>3+ Years</span>
+          <span>MCA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

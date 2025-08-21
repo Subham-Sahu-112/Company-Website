@@ -1,0 +1,560 @@
+<% layout('layouts/Boilerplate') %>
+
+<style>
+  .services {
+    width: 100%;
+    background: radial-gradient(circle at center, #074299 0%, #001432 100%);
+  }
+  .service-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    padding-top: 0;
+  }
+  .service-head {
+    width: 100%;
+    height: 90%;
+    padding-top: 6rem;
+  }
+  .service-head img {
+    width: 100%;
+  }
+  .service-head h1 {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 5rem;
+  }
+  .all-services {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+  .all-services .service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .legal h1 span {
+    color: rgb(255, 106, 0);
+    text-shadow: 2px 2px 2px orange;
+  }
+  .img-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
+  .img {
+    width: 48%;
+    height: 20%;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .img:hover img {
+    box-shadow: 0px 0px 30px 3px rgba(0, 0, 0, 0.5);
+    transform: scale(1.02);
+  }
+  .img img {
+    width: 90%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .legal-info {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .legal-info p {
+    font-size: 1.2rem;
+    line-height: 27px;
+  }
+  .legal-info ul {
+    margin-left: 1rem;
+    line-height: 30px;
+  }
+  .legal-info ul li {
+    font-size: 1.1rem;
+  }
+  .legal-info ul li p {
+    font-size: 1rem;
+  }
+  .all-services .it {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .quote-btn {
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    color: black;
+    background: linear-gradient(135deg, #6c63ff 0%, #ffb86c 100%);
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    position: absolute;
+    bottom: -1.5%;
+    left: 45%;
+    transition: transform 0.3s ease;
+  }
+  .quote-btn:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<body>
+  <div class="services">
+    <div class="service-container">
+      <div class="service-head">
+        <img src="/assets/service-banner.jpg" alt="service" />
+        <h1>Services We Provide</h1>
+      </div>
+      <div class="all-services">
+        <div class="service legal" id="legal">
+          <h1 style="font-size: 2.5rem">👉 <span>LEGAL</span> 🏢</h1>
+          <h2 style="font-weight: 600; color: rgb(255, 157, 0)">
+            Professional Legal Services You Can Trust
+          </h2>
+          <div class="img-info">
+            <span class="legal-info">
+              <p style="width: 70%">
+                At Legalion, we provide comprehensive legal services tailored to
+                meet the unique needs of individuals, families, and businesses.
+                Our experienced attorneys are committed to delivering practical
+                solutions with integrity, discretion, and unmatched
+                professionalism.
+              </p>
+              <p style="width: 70%">
+                Whether you’re facing a complex legal dispute, need guidance
+                through a business transaction, or require personal legal
+                advice, we’re here to protect your interests every step of the
+                way. Our practice areas include:
+              </p>
+              <ul>
+                <li>NCLT - Stress Assets - IBC Related</li>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                  "
+                >
+                  Our IBC Advisory Services cover the full spectrum of support
+                  required under the Insolvency and Bankruptcy Code. We
+                  specialize in formulating legal strategies and defending
+                  applications under IBC to protect client interests. Our expert
+                  legal advisory services and legal due diligence ensure
+                  compliance and risk mitigation. We provide advisory on
+                  resolution plans, offer skilled representation in liquidation
+                  proceedings, and conduct in-depth forensic investigations to
+                  detect financial irregularities. Additionally, we assist in
+                  scouting acquisition targets to help businesses identify and
+                  secure strategic growth opportunities.
+                </p>
+                <p style="font-size: 1rem; margin-top: 0.5rem">
+                  1. Formulation of Legal Strategies
+                </p>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                  "
+                >
+                  We craft tailored legal strategies that address each client’s
+                  unique IBC challenges. Our process includes a detailed
+                  assessment of legal and financial circumstances, evaluating
+                  risks, and identifying the most effective path forward. We
+                  ensure that all actions comply with IBC provisions while
+                  safeguarding client interests. By combining legal expertise
+                  with business understanding, our strategies are practical,
+                  result-driven, and commercially sound. This ensures clients
+                  are well-prepared for every stage of the insolvency process.
+                </p>
+                <p style="font-size: 1rem; margin-top: 0.5rem">
+                  2. Defending Applications under IBC
+                </p>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                  "
+                >
+                  We represent clients in defending applications filed against
+                  them under the Insolvency and Bankruptcy Code. Our team
+                  analyzes the merits of the case, prepares strong legal
+                  arguments, and advocates effectively before the appropriate
+                  authorities. We focus on protecting the rights and reputation
+                  of our clients while minimizing legal and financial exposure.
+                  Through timely action and strategic defense, we work to
+                  achieve the best possible outcome. Our experience ensures a
+                  comprehensive defense strategy at every stage of proceedings.
+                </p>
+
+                <p style="font-size: 1rem; margin-top: 0.5rem">
+                  3. Legal Advisory Services
+                </p>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                  "
+                >
+                  Our legal advisory services provide expert guidance on all
+                  matters relating to the Insolvency and Bankruptcy Code. We
+                  assist businesses, creditors, and stakeholders in
+                  understanding their legal position and rights. Our team
+                  delivers clear, actionable advice that simplifies complex IBC
+                  procedures. We help clients make informed decisions that align
+                  with both legal obligations and commercial objectives. This
+                  ensures smooth navigation through every legal challenge under
+                  IBC.
+                </p>
+
+                <p style="font-size: 1rem; margin-top: 0.5rem">
+                  4. Legal Due Diligence
+                </p>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                  "
+                >
+                  We conduct in-depth legal due diligence to assess compliance,
+                  uncover potential risks, and verify critical information. Our
+                  process includes reviewing contracts, financial statements,
+                  and operational records to ensure transparency and accuracy.
+                  We identify legal pitfalls before they become liabilities,
+                  enabling informed decision-making. This service is essential
+                  for insolvency cases, mergers, acquisitions, or restructuring
+                  activities. With our due diligence, clients can move forward
+                  with confidence and clarity.
+                </p>
+
+                <p style="font-size: 1rem; margin-top: 0.5rem">
+                  5. Advisory on Resolution Plans
+                </p>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                  "
+                >
+                  We provide end-to-end advisory services for creating,
+                  reviewing, and implementing resolution plans under IBC. Our
+                  team ensures that plans are compliant with all regulatory
+                  requirements and tailored to maximize recovery. We work
+                  closely with stakeholders to design feasible, practical
+                  solutions that align with business objectives. Our expertise
+                  ensures that every resolution plan is both legally robust and
+                  commercially sound. This leads to smoother approval and
+                  implementation by the authorities.
+                </p>
+
+                <p style="font-size: 1rem; margin-top: 0.5rem">
+                  6. Representation in Liquidation Proceedings
+                </p>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                  "
+                >
+                  We offer skilled representation in liquidation proceedings to
+                  protect client interests and ensure compliance with IBC
+                  processes. Our team manages all aspects of the liquidation,
+                  from documentation to coordination with liquidators and
+                  stakeholders. We aim to maximize asset value while minimizing
+                  potential disputes or delays. Through strategic
+                  representation, we ensure an efficient and transparent
+                  liquidation process. Our approach safeguards both legal rights
+                  and financial interests.
+                </p>
+
+                <p style="font-size: 1rem; margin-top: 0.5rem">
+                  7. Conducting Forensic Investigations
+                </p>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                  "
+                >
+                  Our forensic investigation services help uncover fraud,
+                  financial mismanagement, or irregularities during insolvency
+                  proceedings. We use detailed analysis of financial
+                  transactions, documentation, and operational processes to
+                  identify discrepancies. Our findings provide clear evidence
+                  that can support legal action or corrective measures. This
+                  service is crucial for protecting creditors, investors, and
+                  other stakeholders. We ensure all investigations are thorough,
+                  accurate, and in line with legal standards.
+                </p>
+
+                <p style="font-size: 1rem; margin-top: 0.5rem">
+                  8. Scouting for Acquisition Target
+                </p>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  We assist clients in identifying and evaluating potential
+                  acquisition opportunities arising during insolvency processes.
+                  Our team conducts legal and financial assessments to ensure
+                  each target aligns with the client’s strategic goals. We
+                  provide insights into risks, compliance, and potential
+                  benefits before finalizing deals. By combining legal due
+                  diligence with market understanding, we help clients secure
+                  valuable assets or businesses. This service enables strategic
+                  growth while ensuring regulatory compliance.
+                </p>
+                <li style="font-size: 2rem">Alternative Dispute Resolution</li>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin: 1rem 0;
+                    margin-left: 1rem;
+                  "
+                >
+                  At Legalion, we understand that going to court isn’t always
+                  the best option. That’s why we offer Alternative Dispute
+                  Resolution (ADR) services — a range of effective methods
+                  designed to help you resolve legal conflicts efficiently,
+                  privately, and often without the time and cost associated with
+                  litigation.
+                </p>
+                <h2 style="margin-left: 1rem">What Is ADR?</h2>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  Alternative Dispute Resolution (ADR) refers to a set of
+                  processes used to settle disputes outside the courtroom. It
+                  provides a less adversarial, more collaborative approach,
+                  allowing parties to reach mutually agreeable outcomes with the
+                  help of neutral third parties.
+                </p>
+                <h2 style="margin-left: 1rem">Our ADR Services Include:</h2>
+                <ul style="margin-left: 2rem">
+                  <li>Mediation:</li>
+                  <p style="width: 70%; font-size: 1rem">
+                    A neutral mediator helps both parties communicate,
+                    understand each other’s positions, and work toward a
+                    voluntary, mutually acceptable resolution. Ideal for family
+                    matters, workplace issues, and business disputes.
+                  </p>
+                  <li>Arbitration:</li>
+                  <p style="width: 70%; font-size: 1rem">
+                    A private and more flexible alternative to court, where an
+                    arbitrator (or panel) hears both sides and makes a decision,
+                    which can be binding or non-binding based on your agreement.
+                  </p>
+                  <li>Negotiation Support:</li>
+                  <p style="width: 70%; font-size: 1rem">
+                    We assist clients in direct settlement negotiations,
+                    ensuring that your rights and interests are protected
+                    throughout the process.
+                  </p>
+                  <li>Conciliation:</li>
+                  <p style="width: 70%; font-size: 1rem">
+                    Similar to mediation, but the conciliator may take a more
+                    active role in suggesting terms of settlement.
+                  </p>
+                  <li>Early Neutral Evaluation:</li>
+                  <p style="width: 70%; font-size: 1rem">
+                    An impartial legal expert assesses your case early and gives
+                    a non-binding opinion, which can help guide settlement
+                    discussions or clarify legal strengths and weaknesses.
+                  </p>
+                </ul>
+                <li style="font-size: 2rem; margin: 1rem 0">
+                  Value Added Consulting
+                </li>
+                <p
+                  style="
+                    width: 70%;
+                    font-size: 1rem;
+                    margin: 1rem 0;
+                    margin-left: 1rem;
+                  "
+                >
+                  At Legalion, we believe legal support should do more than just
+                  solve problems — it should help you grow, protect, and
+                  optimize your business or personal interests. That’s why we
+                  offer Value Added Consulting as part of our legal services — a
+                  strategic approach that integrates legal expertise with
+                  business insight to deliver measurable, long-term value.
+                </p>
+                <h2 style="margin-left: 1rem">
+                  What Is Value Added Legal Consulting?
+                </h2>
+                <p style="width: 70%; font-size: 1rem; margin-left: 1rem">
+                  Value Added Consulting goes beyond traditional legal advice.
+                  It combines legal knowledge with industry-specific insight,
+                  risk management, and strategic planning to help clients:
+                </p>
+                <ul style="margin-left: 2rem">
+                  <li>Make smarter decisions</li>
+                  <li>Anticipate and prevent legal issues</li>
+                  <li>Improve operational efficiency</li>
+                  <li>Strengthen compliance and governance</li>
+                  <li>Align legal strategies with business goals</li>
+                </ul>
+              </ul>
+              <p style="width: 70%; font-size: 1rem; margin-left: 2rem">
+                This service is ideal for clients who need more than just
+                reactive legal solutions — it's for those who want proactive,
+                forward-thinking guidance.
+              </p>
+              <h2 style="margin-left: 2rem">
+                What We Offer Through Value Added Consulting:
+              </h2>
+              <ul style="margin-left: 3rem">
+                <li>Legal Risk Assessment & Prevention:</li>
+                <p style="width: 70%; font-size: 1rem">
+                  Identify potential legal risks early and implement strategies
+                  to avoid costly disputes or regulatory issues.
+                </p>
+                <li>Compliance & Regulatory Strategy:</li>
+                <p style="width: 70%; font-size: 1rem">
+                  Stay ahead of changing laws and industry standards with
+                  ongoing compliance support and advisory.
+                </p>
+                <li>Business Structuring & Transactional Strategy:</li>
+                <p style="width: 70%; font-size: 1rem">
+                  Ensure that your business deals, partnerships, and internal
+                  structures are legally sound and aligned with your long-term
+                  goals.
+                </p>
+                <li>Contract Optimization:</li>
+                <p style="width: 70%; font-size: 1rem">
+                  Review and tailor your contracts to maximize protection and
+                  flexibility while minimizing exposure.
+                </p>
+                <li>Industry-Specific Legal Insight:</li>
+                <p style="width: 70%; font-size: 1rem">
+                  Our consultants offer tailored advice based on deep experience
+                  in your sector — whether it's finance, tech, manufacturing,
+                  healthcare, or others.
+                </p>
+                <li>Policy Development & Corporate Governance:</li>
+                <p style="width: 70%; font-size: 1rem">
+                  Establish effective internal policies and governance practices
+                  to ensure ethical, legal, and operational excellence.
+                </p>
+              </ul>
+              <p>
+                With a client-first approach, we combine in-depth legal
+                knowledge with personalized service to help you make informed
+                decisions and achieve the best possible outcomes.
+              </p>
+              <p>
+                <a href="/contact-us">Contact us</a>
+                today for a confidential consultation. Your legal peace of mind
+                starts here.
+              </p>
+            </span>
+            <a class="quote-btn" href="/contact-us">
+              <span>Get a Quote</span>
+            </a>
+            <span style="top: -3%" class="img">
+              <iframe
+                width="90%"
+                height="95%"
+                src="https://www.youtube.com/embed/SmqJ1DrT58c?autoplay=1&mute=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+            </span>
+            <span style="top: 25%" class="img">
+              <iframe
+                width="90%"
+                height="95%"
+                src="https://www.youtube.com/embed/SmqJ1DrT58c?autoplay=1&mute=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+            </span>
+            <span style="top: 53%" class="img">
+              <iframe
+                width="90%"
+                height="95%"
+                src="https://www.youtube.com/embed/SmqJ1DrT58c?autoplay=1&mute=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+            </span>
+            <span style="top: 76%" class="img">
+              <iframe
+                width="90%"
+                height="95%"
+                src="https://www.youtube.com/embed/SmqJ1DrT58c?autoplay=1&mute=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

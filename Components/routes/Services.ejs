@@ -1,0 +1,140 @@
+<% layout('layouts/Boilerplate') %>
+
+<style>
+  .services {
+    width: 100%;
+    background: radial-gradient(circle at center, #074299 0%, #001432 100%);
+  }
+  .service-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    padding-top: 0;
+  }
+  .service-head {
+    width: 100%;
+    height: 90%;
+    padding-top: 6rem;
+  }
+  .service-head img {
+    width: 100%;
+  }
+  .service-head h1 {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 5rem;
+  }
+  .all-services {
+    max-width: 1450px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 3rem 0;
+  }
+  .all-services a {
+    text-decoration: none;
+    color: white;
+  }
+  .all-services .service {
+    height: fit-content;
+    min-height: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    background-color: #114694;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    cursor: pointer;
+  }
+  .service:hover img {
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.5);
+    transform: scale(1.03);
+  }
+  .service h1 {
+    font-size: 1.5rem;
+  }
+  .service:hover h1 {
+    text-decoration: underline;
+  }
+  .service img {
+    width: 100%;
+    border-radius: 1rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .service p {
+    text-align: center;
+  }
+</style>
+
+<body>
+  <div class="services">
+    <div class="service-container">
+      <div class="service-head">
+        <img src="/assets/service-banner.jpg" alt="service" />
+        <h1>Services We Provide</h1>
+      </div>
+      <div class="all-services">
+        <a href="/services/legal-service">
+          <div class="service legal" id="legal">
+            <img style="height: 200px" src="/assets/Lawist.jpg" alt="Law" />
+            <h1>LEGAL SERVICE</h1>
+            <p style="color: rgb(255, 157, 0)">
+              We provide trusted legal services tailored to individuals,
+              families, and businesses. Our experienced attorneys are committed
+              to protecting your rights and achieving the best possible outcome.
+            </p>
+          </div>
+        </a>
+        <a href="/services/IT-service">
+          <div class="service it" id="IT">
+            <img
+              style="height: 200px"
+              src="/assets/Information-Technology.jpg"
+              alt="Law"
+            />
+            <h1>IT SERVICE</h1>
+            <p style="color: rgb(255, 157, 0)">
+              We deliver smart, secure, and scalable IT solutions to help
+              businesses operate efficiently and stay ahead in the digital age.
+              From support to strategy, we’ve got your tech covered.
+            </p>
+          </div>
+        </a>
+        <a href="/services/business-branding">
+          <div class="service dm" id="DM">
+            <img style="height: 200px" src="/assets/digital.jpg" alt="Law" />
+            <h1>BUSINESS BRANDING</h1>
+            <p style="color: rgb(255, 157, 0)">
+              We help businesses build powerful, memorable brands that connect
+              with their audience. From logo design to brand strategy, we bring
+              your vision to life.
+            </p>
+          </div>
+        </a>
+        <a href="/services/consulting">
+          <div class="service dm" id="DM">
+            <img
+              style="height: 200px"
+              src="/assets/business-consulting.jpg"
+              alt="Law"
+            />
+            <h1>CONSULTING</h1>
+            <p style="color: rgb(255, 157, 0)">
+              We provide expert consulting services to help businesses solve
+              problems, improve performance, and achieve sustainable growth.
+              Strategic advice tailored to your goals.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>

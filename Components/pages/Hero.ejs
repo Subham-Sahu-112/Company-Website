@@ -1,0 +1,83 @@
+<style>
+  .hero {
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(circle at center, #074299 0%, #001432 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-container {
+    height: calc(100vh - 150px);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+  .hero-container .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  .btns a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .btns a {
+    font-size: 1.5rem;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 1rem 1.5rem;
+  }
+</style>
+
+<div class="hero" id="home">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1
+        style="
+          font-size: 3.5rem;
+          text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+          /* margin-bottom: 3rem; */
+        "
+      >
+        Driving your<br /><span
+          style="color: #fa911a; text-shadow: 0px 0px 10px black"
+          >success with</span
+        ><br /><span style="color: #fa911a; text-shadow: 0px 0px 10px black"
+          >reliable IT support.</span
+        >
+      </h1>
+      <h1
+        style="
+          width: 70%;
+          font-size: 1.8rem;
+          font-weight: 400;
+          line-height: 50px;
+        "
+      >
+        Take charge of your business continuity with innovative IT Solution.
+      </h1>
+      <div class="btns">
+        <a href="#contact" style="border: 3.5px solid #fa911a">
+          <span>Schedule a free consultant</span>
+        </a>
+        <a href="#contact" style="border: 3.5px solid #ff0000">
+          <span>Our Services</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src='/assets/Hero-img.svg' alt="Hero-img">
+    </div>
+  </div>
+</div>
